@@ -1,8 +1,9 @@
 class Credit_card:
 	def __init__(self, number):
-		self.number = self.luhn_check()
+		self.number = number
 		self.length = self.check_length()
 		self.type = None
+		self.luhn = self.luhn_check()
 
 	def check_length(self, number):
 		if self.number != 16 or 15:
@@ -29,7 +30,7 @@ class Credit_card:
 		luhn_modulo = 0
 		if self.type:
 			for i in cc_input[-1::-2]:
-				if cc_input[i] % == 0:
+				if i % 2 == 1:
 					double_it = cc_input[1] *2
 					if len(double_it) > 10:
 						double_it -= 9
@@ -37,7 +38,7 @@ class Credit_card:
 					luhn_modulo += cc_input[i]
 			for s in range(len(luhn_list)):
 				if luhn_modulo % 10 == 0:
-					return cc_input
+					return True
 				else:
 					raise print("card not valid")
 
