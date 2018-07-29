@@ -36,11 +36,11 @@ class Credit_card:
 						double_it -= 9
 				else:
 					luhn_modulo += cc_input[i]
-			for s in range(len(luhn_list)):
-				if luhn_modulo % 10 == 0:
-					return True
-				else:
-					raise print("card not valid")
+			if luhn_modulo % 10 == 0:
+				print ("card is valid")
+				return True
+			else:
+				raise print("card not valid")
 
 
 
